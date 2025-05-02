@@ -12,6 +12,14 @@ RUN if [ -n "${APPS_JSON_BASE64}" ]; then \
     mkdir /opt/frappe && echo "${APPS_JSON_BASE64}" | base64 -d > /opt/frappe/apps.json; \
   fi
 
+# patches für eu_einvoice
+# Installiere sudo und andere benötigte Tools
+RUN apt update && apt install -y sudo
+
+# Füge 'frappe' zu den sudoers hinzu
+RUN echo 'frappe ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+#ende an patches für eu_einvoice
+
 USER frappe
 
 RUN export APP_INSTALL_ARGS="" && \
