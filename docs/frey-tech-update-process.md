@@ -31,3 +31,14 @@ docker buildx build \
 ```
 
 This command builds the Docker image using the specified arguments and pushes it to the GitHub Container Registry.
+
+
+## Step 3: Migrate site
+
+Note:
+
+- Wait for the `db` service to start and `configurator` to exit before trying to migrate a site. Usually this takes up to 10 seconds.
+
+```sh
+docker compose exec backend bench --site erp.home.frey-tech.de migrate
+```
