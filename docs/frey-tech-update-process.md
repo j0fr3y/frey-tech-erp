@@ -23,7 +23,7 @@ docker buildx build \
     --build-arg FRAPPE_PATH=https://github.com/frappe/frappe \
     --build-arg FRAPPE_BRANCH=version-15 \
     --build-arg APPS_JSON_BASE64=$APPS_JSON_BASE64 \
-    --tag ghcr.io/j0fr3y/frey-tech-erp/frey-tech-erp-prod:1.0.1 \
+    --tag ghcr.io/j0fr3y/frey-tech-erp/frey-tech-erp-prod:1.0.3 \
     --tag ghcr.io/j0fr3y/frey-tech-erp/frey-tech-erp-prod:latest \
     --file images/layered/Containerfile \
     --push \
